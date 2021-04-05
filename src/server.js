@@ -1,14 +1,10 @@
 const { Server } = require('net');
+const { error } = require('./error');
 
 const host = '0.0.0.0';
 const END = 'END';
 
 const connections = new Map();
-
-const error = (error) => {
-	console.log(error);
-	process.exit(1);
-};
 
 //enviar el message a todos menos a origin
 const sendMessage = (message, origin) => {

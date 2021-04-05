@@ -1,3 +1,4 @@
+const { error } = require('./error');
 const { Socket } = require('net');
 const socket = new Socket();
 //con readline leemos de consola
@@ -7,11 +8,6 @@ const readline = require('readline').createInterface({
 });
 
 const END = 'END';
-
-const error = (error) => {
-	console.log(error);
-	process.exit(1);
-};
 
 const connect = (host, port) => {
 	console.log(`Connecting to ${host}:${port}`);
